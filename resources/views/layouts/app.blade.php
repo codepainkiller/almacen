@@ -14,6 +14,8 @@
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/libs.css" rel="stylesheet">
 
+    @yield('css-content')
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([

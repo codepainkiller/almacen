@@ -43,3 +43,9 @@ Vue.http.interceptors.push((request, next) => {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/**
+ * DataTable for Bootstrap 3
+ */
+require('datatables.net');
+require('datatables.net-bs');

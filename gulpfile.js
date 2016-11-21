@@ -19,7 +19,8 @@ elixir(mix => {
             'libs/sweetalert-dev.js'
         ], './public/js/libs.js')
         .styles([
-            'libs/sweetalert.css'
+            'libs/sweetalert.css',
+            'libs/dataTables.bootstrap.min.css'
         ], './public/css/libs.css')
        .webpack('app.js')
        .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');

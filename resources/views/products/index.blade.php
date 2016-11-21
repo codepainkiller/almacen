@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-6">
 
-            <buttton class="btn btn-primary pull-right" data-toggle="modal" data-target="#createModal">Agregar Producto</buttton>
+            <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#createModal">Agregar Producto</button>
         </div>
     </div>
     <br>
@@ -26,51 +26,28 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                    @foreach($products as $product)
-                        <tr>
-                            <td>{{ $product->id }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td>{{ $product->category->name }}</td>
-                            <td>{{ $product->stock }}</td>
-                            <td>s/ {{ number_format($product->purchase_price, 2, ',', ' ') }}</td>
-                            <td>s/ {{ number_format($product->sale_price, 2, ',', ' ') }}</td>
-                            <td>
-                                {{--
-                                <a href="#" class="text-success">
-                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar
-                                </a> --}}
-                                <a href="#" class="text-danger" onclick="confirm({{ $product->id }})">
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Eliminar
-                                </a>
-
-                            </td>
-                        </tr>
-
-         @endforeach
                 <tbody>
                     <!-- Dynamic content-->
                 </tbody>
             </table>
-            <div class="text-center">
-                {{ $products->render() }}
-            </div>
         </div>
     </div>
 </div>
 
-<form id="destroy-form" action="{{ route('products.destroy', '_id') }}" method="POST" style="display: none;">
+<form id="destroy-form" action="{{ route('products.destroy', ':id') }}" method="POST" style="display: none;">
     {{ method_field('DELETE') }}
     {{ csrf_field() }}
 </form>
 
 @include('products.modals.create')
+@include('products.modals.edit')
 
 @stop
 
 @section('js-content')
+
 <script>
     function confirm(id) {
-
         swal({
             title: "¿Esta seguro?",
             text: "Se eliminará permanentemente!",
@@ -83,10 +60,54 @@
         },
         function(){
             var form = $('#destroy-form');
-            var url = form.attr('action').replace('_id', id);
+            var url = form.attr('action').replace(':id', id);
             form.attr('action', url);
             form.submit();
         });
     }
+
+    $('table').DataTable({
+        "language": {
+            "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
+        },
+        "processing": true,
+        "serverSide": true,
+        "ajax": "/api/products",
+        "columns": [
+            {data: 'id', name: 'products.id'},
+            {data: 'name'},
+            {data: 'category.name', name: 'category.name'},
+            {data: 'stock'},
+            {data: 'purchase_price'},
+            {data: 'sale_price'},
+            {data: 'actions', name: 'actions', orderable: false, searchable: false}
+        ]
+    });
+
+    $('tbody').on('click', '.text-success', function () {
+        var id = $(this).data('id');
+        var form = $('#editForm');
+        var url = form.attr('action').replace(':id', id);
+        form.attr('action', url);
+
+        $.get('/products/' + id, function (product) {
+            $('#name').val(product.name);
+            $('#stock').val(product.stock);
+            $('#category_id').val(product.category_id);
+            $('#purchase_price').val(product.purchase_price);
+            $('#sale_price').val(product.sale_price);
+            console.log(id, product);
+            $('#editModal').modal('show');
+        });
+    });
+
+    $('tbody').on('click', '.text-danger', function () {
+        confirm($(this).data('id'));
+    });
+
 </script>
+@stop
+
+@section('css-content')
+
 @stop

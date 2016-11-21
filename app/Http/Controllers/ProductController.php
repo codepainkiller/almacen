@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -21,8 +20,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('id', 'desc')->paginate(14);
-        return view('products.index', compact('products'));
+        return view('products.index');
+    }
+
+    public function show($id)
+    {
+        return Product::findOrFail($id);
     }
 
     /**
@@ -49,7 +52,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+
+        flash()->success('Actualizado', 'El producto de se actualizo correctamente.');
+
+        return redirect('/products');
     }
 
     /**
