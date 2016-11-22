@@ -35,6 +35,17 @@ Route::get('api/products', function() {
                 <a href='#' class='text-success' data-id='{$product->id}'><span class='glyphicon glyphicon-pencil' ></span> Editar</a>
                 <a href='#' class='text-danger' data-id='{$product->id}'><span class='glyphicon glyphicon-trash'></span> Eliminar</a>";
         })
+        ->editColumn('name', function($product) {
+            return strtoupper($product->name);
+        })
+        ->editColumn('sale_price', function($product) {
+            $format = number_format($product->sale_price, 2, ',', ' ');
+            return "s/ <code class='bg-warning'>{$format}</code>";
+        })
+        ->editColumn('purchase_price', function($product) {
+            $format = number_format($product->purchase_price, 2, ',', ' ');
+            return "s/ {$format}";
+        })
         ->make(true);
 
 });

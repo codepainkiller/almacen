@@ -17,12 +17,12 @@
             <table class="table table-responsive table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>Código <br></th>
-                        <th>Nombre <br></th>
-                        <th>Categoría <br></th>
-                        <th>Stock</th>
-                        <th>P. De Compra</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
                         <th>P. De Venta</th>
+                        <th>P. De Compra</th>
+                        <th>Stock</th>
+                        <th>Categoría</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -76,10 +76,10 @@
         "columns": [
             {data: 'id', name: 'products.id'},
             {data: 'name'},
-            {data: 'category.name', name: 'category.name'},
-            {data: 'stock'},
-            {data: 'purchase_price'},
             {data: 'sale_price'},
+            {data: 'purchase_price'},
+            {data: 'stock'},
+            {data: 'category.name', name: 'category.name'},
             {data: 'actions', name: 'actions', orderable: false, searchable: false}
         ]
     });
@@ -92,11 +92,11 @@
 
         $.get('/products/' + id, function (product) {
             $('#name').val(product.name);
+            $('#purchase_price').val(product.purchase_price);
             $('#stock').val(product.stock);
             $('#category_id').val(product.category_id);
-            $('#purchase_price').val(product.purchase_price);
             $('#sale_price').val(product.sale_price);
-            console.log(id, product);
+
             $('#editModal').modal('show');
         });
     });
