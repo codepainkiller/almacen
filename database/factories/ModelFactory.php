@@ -36,6 +36,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
         'stock' => rand(1, 20),
+        'sales' => rand(1, 20),
         'purchase_price' => $purchasePrice,
         'sale_price' => $salePrice,
         'category_id' => rand(1, 5)

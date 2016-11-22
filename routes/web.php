@@ -14,3 +14,6 @@ Route::get('api/products/datatable', 'ProductController@datatable');
 
 Route::post('products/{id}/add-stock', 'ProductController@addStock')->name('products.addStock');
 
+Route::get('ventas', 'SaleController@index');
+Route::get('sales/datatable', 'SaleController@datatable');
+
