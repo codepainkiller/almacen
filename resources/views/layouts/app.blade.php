@@ -60,6 +60,7 @@
                         @else
                             <li class="{{ active('products') }}"><a href="{{ url('/products') }}">Productos</a></li>
                             <li class="{{ active('sales') }}"><a href="{{ url('#') }}">Ventas</a></li>
+                            <li class="{{ active('categories') }}"><a href="{{ url('#') }}">Categorías</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

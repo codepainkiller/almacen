@@ -29,7 +29,7 @@
 
                             <div class="form-group">
                                 <label for="stock" class="control-label">Stock</label>
-                                <input name="stock" id="stock" type="number" step="any" class="form-control" placeholder="0" required>
+                                <input name="stock" id="stock" type="number" step="any" class="form-control" placeholder="0" disabled>
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Actualizar</button>
                 </div>
             </div>
