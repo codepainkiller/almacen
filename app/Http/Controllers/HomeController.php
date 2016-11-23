@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return redirect('products');
+        $products = Product::all();
+
+        $income = $products->reduce(function($carry, $product) {
+            return $carry + ($product->sale_price * $product->sales);
+        });
+
+        $earnings = $products->reduce(function($carry, $product) {
+            return $carry + ($product->sales * ($product->sale_price -$product->purchase_price));
+        });
+
+        return view('home', compact('income', 'earnings'));
     }
 }

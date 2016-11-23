@@ -8,7 +8,23 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="alert alert-info">
+                                <h4>Ingreso Total</h4>
+                                <span class="price">s/ {{ $income }}</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="alert alert-success">
+                                <h4>Ganancia Total</h4>
+                                <span class="price">s/ {{ $earnings }}</span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

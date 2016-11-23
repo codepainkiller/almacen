@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
+                <button class="btn btn-success" data-toggle="modal" data-target="#registerModal">Registrar Venta</button>
             </div>
         </div>
         <br>
@@ -17,9 +17,11 @@
                         <tr>
                             <th>Código</th>
                             <th>Nombre</th>
+                            <th>P. De Compra</th>
                             <th>P. De Venta</th>
                             <th>Cantidad</th>
-                            <th>Subtotal</th>
+                            <th>Ingreso</th>
+                            <th>Ganancia</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -30,6 +32,8 @@
             </div>
         </div>
     </div>
+
+    @include('sales.modals.register')
 
 @stop
 

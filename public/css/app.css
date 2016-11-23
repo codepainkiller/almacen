@@ -5766,4 +5766,8 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.price {
+  font-size: 3rem;
+  font-weight: 300; }
+
 /*# sourceMappingURL=app.css.map */
