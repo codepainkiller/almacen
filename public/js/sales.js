@@ -23,7 +23,8 @@ $("#name").easyAutocomplete({
     template: {
         type: "custom",
         method: function(value, item) {
-            return "<strong>"+ value +"</strong>" + "<code class='pull-right'>" + item.sale_price + "</code>";
+            return "<strong>"+ value +"</strong>" +
+                "<code class='pull-right'>" + parseFloat(item.sale_price).toFixed(2) + "</code>";
         }
     },
     list: {
