@@ -29,4 +29,6 @@ elixir(mix => {
         './public/css/libs.css')
        .webpack('app.js')
        .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');
+
+    mix.browserSync({proxy: 'almacen.dev'});
 });
