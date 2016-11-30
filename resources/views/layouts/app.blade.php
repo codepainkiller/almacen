@@ -58,6 +58,7 @@
                             <li><a href="{{ url('/register') }}">Registrar</a></li>
                             --}}
                         @else
+                            <li class="{{ active('home') }}"><a href="{{ url('/home') }}">Home</a></li>
                             <li class="{{ active('products') }}"><a href="{{ url('/products') }}">Productos</a></li>
                             <li class="{{ active('ventas') }}"><a href="{{ url('ventas') }}">Ventas</a></li>
                             <li class="{{ active('categories') }}"><a href="{{ url('#') }}">Categorías</a></li>
