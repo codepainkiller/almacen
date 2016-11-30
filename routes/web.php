@@ -8,7 +8,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('products', 'ProductController');
+Route::resource('products', 'ProductController', ['except' => ['edit', 'create']]);
 
 Route::get('api/products/datatable', 'ProductController@datatable');
 
@@ -18,4 +18,7 @@ Route::get('ventas', 'SaleController@index');
 Route::get('sales/datatable', 'SaleController@datatable');
 Route::get('sales/list-products', 'SaleController@listProducts');
 Route::post('sales/{id}', 'SaleController@store')->name('sales.store');
+
+
+Route::resource('categorias', 'CategoryController', ['except' => ['edit', 'create']]);
 

@@ -24,9 +24,13 @@ class ProductController extends Controller
         return view('products.index');
     }
 
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        return Product::findOrFail($id);
+        if ($request->ajax()) {
+            return Product::findOrFail($id);
+        }
+
+        return redirect('products');
     }
 
     /**
@@ -39,7 +43,7 @@ class ProductController extends Controller
     {
         Product::create($request->except('_token'));
 
-        flash()->success('Registrado', 'El producto de guardado correctamente.');
+        flash()->success('Registrado', 'El producto se guardó correctamente.');
 
         return redirect('/products');
     }
@@ -56,7 +60,7 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->update($request->all());
 
-        flash()->success('Actualizado', 'El producto de se actualizo correctamente.');
+        flash()->success('Actualizado', 'El producto se actualizó correctamente.');
 
         return redirect('/products');
     }
