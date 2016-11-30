@@ -42,3 +42,12 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
         'category_id' => rand(1, 5)
     ];
 });
+
+$factory->define(App\Purchase::class, function (Faker\Generator $faker) {
+    return [
+        'units' => $faker->randomElement([6, 12, 24]),
+        'price' => $faker->randomFloat(2, 0.5, 10),
+        'registered_by' => 'Martin Cruz',
+        'product_id' => rand(1, 20),
+    ];
+});

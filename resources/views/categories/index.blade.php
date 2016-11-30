@@ -4,7 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Crear Categoría</button>
+                <h2>
+                    <span class="glyphicon glyphicon-tags"></span> Categorías
+                    <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#createModal">
+                        <span class="glyphicon glyphicon-plus"></span> Nueva Categoría
+                    </button>
+                </h2>
+
             </div>
         </div>
         <br>

@@ -60,12 +60,13 @@
                         @else
                             <li class="{{ active('home') }}"><a href="{{ url('/home') }}">Home</a></li>
                             <li class="{{ active('products') }}"><a href="{{ url('/products') }}">Productos</a></li>
+                            <li class="{{ active('compras') }}"><a href="{{ url('compras') }}">Compras</a></li>
                             <li class="{{ active('ventas') }}"><a href="{{ url('ventas') }}">Ventas</a></li>
                             <li class="{{ active('categorias') }}"><a href="{{ url('categorias') }}">Categorías</a></li>
 
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    <span class="glyphicon glyphicon-user"></span> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">

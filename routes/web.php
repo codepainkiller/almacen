@@ -22,3 +22,6 @@ Route::post('sales/{id}', 'SaleController@store')->name('sales.store');
 
 Route::resource('categorias', 'CategoryController', ['except' => ['edit', 'create']]);
 
+Route::get('compras', 'PurchaseController@index');
+Route::post('compras', 'PurchaseController@store')->name('purchases.store');
+

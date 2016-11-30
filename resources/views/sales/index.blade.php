@@ -4,7 +4,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-success" data-toggle="modal" data-target="#registerModal">Registrar Venta</button>
+                <h2>
+                    <span class="glyphicon glyphicon-usd"></span> Ventas
+                    <button class="btn btn-success pull-right" data-toggle="modal" data-target="#registerModal">
+                        <span class="glyphicon glyphicon-save"></span> Registrar Venta
+                    </button>
+                </h2>
+
             </div>
         </div>
         <br>

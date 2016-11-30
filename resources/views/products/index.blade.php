@@ -4,7 +4,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#createModal">Nuevo Producto</button>
+            <h2>
+                <span class="glyphicon glyphicon-apple"></span> Productos
+
+                <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#createModal">
+                    <span class="glyphicon glyphicon-save"></span> Registrar Producto
+                </button>
+            </h2>
+
         </div>
     </div>
     <br>
