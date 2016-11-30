@@ -23,9 +23,9 @@
                         <tr>
                             <th>Código</th>
                             <th>Nombre</th>
-                            <th>P. De Compra</th>
-                            <th>P. De Venta</th>
-                            <th>Cantidad</th>
+                            <th>P. de Compra</th>
+                            <th>P. de Venta</th>
+                            <th>Unidades</th>
                             <th>Ingreso</th>
                             <th>Ganancia</th>
                         </tr>

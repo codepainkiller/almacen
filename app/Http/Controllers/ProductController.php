@@ -41,9 +41,15 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        Product::create($request->except('_token'));
+        $request->offsetSet('stock', 0);
+        $request->offsetSet('purchase_price', 0);
+        $product = Product::create($request->except('_token'));
 
-        flash()->success('Registrado', 'El producto se guardó correctamente.');
+        if ($product) {
+            flash()->success('Registrado', 'El producto se guardó correctamente.');
+        } else {
+            flash()->error('Error', 'Por favor revise los datos ingresados e intente nuevamente.');
+        }
 
         return redirect('/products');
     }
@@ -97,9 +103,6 @@ class ProductController extends Controller
         return Datatables::of($products)
             ->addColumn('actions', function($product) {
                 return "
-                <a href='#' class='text-warning' data-name='{$product->name}' data-id='{$product->id}'>
-                    <span class='glyphicon glyphicon-plus-sign'></span> Añadir
-                </a>
                 <a href='#' class='text-success' data-id='{$product->id}'>
                     <span class='glyphicon glyphicon-pencil'></span> Editar
                 </a>

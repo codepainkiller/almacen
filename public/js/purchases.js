@@ -26,3 +26,5 @@ $("#name").easyAutocomplete({
     theme: "bootstrap",
     adjustWidth: false
 });
+
+$('[data-toggle="popover"]').popover();

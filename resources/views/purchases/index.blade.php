@@ -30,8 +30,13 @@
                         </thead>
                         <tbody>
                             @foreach($purchases as $purchase)
-                                <tr>
-                                    <td>{{ $purchase->updated_at->toDateString() }}</td>
+                                <tr data-toggle="popover"
+                                    data-trigger="hover"
+                                    data-placement="left"
+                                    data-content="{{ ucfirst($purchase->updated_at->diffForHumans()) }}">
+                                    <td>
+                                        {{ $purchase->updated_at->toDateString() }}
+                                    </td>
                                     <td>{{ $purchase->product->name }}</td>
                                     <td>{{ $purchase->units }}</td>
                                     <td>s/ {{ number_format($purchase->price, 2, ',', ' ') }}</td>

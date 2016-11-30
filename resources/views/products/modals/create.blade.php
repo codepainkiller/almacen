@@ -11,11 +11,18 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
+
                             <div class="form-group">
                                 <label for="name" class="control-label">Nombre</label>
                                 <input name="name" type="text" class="form-control" placeholder="Ingrese nombre" required>
                             </div>
+
+                            <div class="form-group">
+                                <label for="sale_price" class="control-label">Precio de venta</label>
+                                <input name="sale_price" type="number" step="any" class="form-control" placeholder="Ingrese precio" required>
+                            </div>
+
                             <div class="form-group">
                                 <label for="category_id" class="control-label">Categoría</label>
                                 <select name="category_id" class="form-control">
@@ -25,21 +32,6 @@
                                 </select>
                             </div>
 
-                            <div class="form-group">
-                                <label for="stock" class="control-label">Stock</label>
-                                <input name="stock" type="number" step="any" class="form-control" placeholder="0" required>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="purchase_price" class="control-label">Precio de compra</label>
-                                <input name="purchase_price" type="number" step="any" class="form-control" placeholder="0.0" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="sale_price" class="control-label">Precio de venta</label>
-                                <input name="sale_price" type="number" step="any" class="form-control" placeholder="0.0" required>
-                            </div>
                         </div>
                     </div>
 

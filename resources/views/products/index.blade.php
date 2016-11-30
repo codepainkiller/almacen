@@ -24,10 +24,8 @@
                         <tr>
                             <th>Código</th>
                             <th>Nombre</th>
-                            <th>P. De Venta</th>
-                            <th>P. De Compra</th>
+                            <th>Precio de Venta</th>
                             <th>Stock</th>
-                            <th>Ventas</th>
                             <th>Categoría</th>
                             <th>Acciones</th>
                         </tr>

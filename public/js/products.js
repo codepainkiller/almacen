@@ -30,9 +30,8 @@ var table = $('table').DataTable({
         {data: 'id', name: 'products.id'},
         {data: 'name'},
         {data: 'sale_price'},
-        {data: 'purchase_price'},
         {data: 'stock'},
-        {data: 'sales'},
+        //{data: 'sales'},
         {data: 'category.name', name: 'category.name'},
         {data: 'actions', name: 'actions', orderable: false, searchable: false}
     ]
