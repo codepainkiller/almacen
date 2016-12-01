@@ -10,7 +10,9 @@
                         <span class="glyphicon glyphicon-save"></span> Registrar Compra
                     </button>
                 </h2>
-
+                <p class="text-info">En esta sección puedes registrar cada una de tus compras que realizas para
+                    <strong>abastecer tu almacén</strong>.
+                </p>
             </div>
         </div>
         <br>
@@ -24,8 +26,9 @@
                             <th>Fecha</th>
                             <th>Producto</th>
                             <th>Unidades</th>
-                            <th>Precio</th>
+                            <th>Precio de Compra</th>
                             <th>Registrado por</th>
+                            <th>Acciones</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -41,6 +44,11 @@
                                     <td>{{ $purchase->units }}</td>
                                     <td>s/ {{ number_format($purchase->price, 2, ',', ' ') }}</td>
                                     <td>{{ $purchase->registered_by }}</td>
+                                    <td>
+                                        <a href='#' class='text-danger' data-id='{{ $purchase->id }}'>
+                                            <span class='glyphicon glyphicon-trash'></span> Eliminar
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -54,6 +62,11 @@
             </div>
         </div>
     </div>
+
+    <form id="destroy-form" action="{{ route('compras.destroy', ':id') }}" method="POST" style="display: none;">
+        {{ method_field('DELETE') }}
+        {{ csrf_field() }}
+    </form>
 
     @include('purchases.modals.register')
 

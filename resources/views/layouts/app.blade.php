@@ -61,7 +61,6 @@
                             <li class="{{ active('home') }}"><a href="{{ url('/home') }}">Home</a></li>
                             <li class="{{ active('products') }}"><a href="{{ url('/products') }}">Productos</a></li>
                             <li class="{{ active('compras') }}"><a href="{{ url('compras') }}">Compras</a></li>
-                            <li class="{{ active('ventas') }}"><a href="{{ url('ventas') }}">Ventas</a></li>
                             <li class="{{ active('categorias') }}"><a href="{{ url('categorias') }}">Categorías</a></li>
 
                             <li class="dropdown">

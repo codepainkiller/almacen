@@ -11,7 +11,10 @@
                     <span class="glyphicon glyphicon-save"></span> Registrar Producto
                 </button>
             </h2>
-
+            <p class="text-info">
+                Este módulo es para tener un inventario de tu tienda.
+                El<strong> Precio de Compra</strong> se actualiza según el <a href="/compras">Módulo de Compras</a>.
+            </p>
         </div>
     </div>
     <br>
@@ -47,7 +50,6 @@
 
 @include('products.modals.create')
 @include('products.modals.edit')
-@include('products.modals.addStock')
 
 @stop
 

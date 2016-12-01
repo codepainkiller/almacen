@@ -19,9 +19,7 @@ Route::get('sales/datatable', 'SaleController@datatable');
 Route::get('sales/list-products', 'SaleController@listProducts');
 Route::post('sales/{id}', 'SaleController@store')->name('sales.store');
 
-
 Route::resource('categorias', 'CategoryController', ['except' => ['edit', 'create']]);
 
-Route::get('compras', 'PurchaseController@index');
-Route::post('compras', 'PurchaseController@store')->name('purchases.store');
+Route::resource('compras', 'PurchaseController', ['except' => ['edit', 'create', 'update', 'show']]);
 

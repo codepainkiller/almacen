@@ -1,7 +1,7 @@
 <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
 
-        <form id="registerForm" action="{{ route('purchases.store') }}" method="post">
+        <form id="registerForm" action="{{ route('compras.store') }}" method="post">
             {{ csrf_field() }}
 
             <div class="modal-content">
@@ -10,7 +10,7 @@
                     <h4 class="modal-title" id="myModalLabel">Registrar Compra</h4>
                 </div>
                 <div class="modal-body">
-                    <input name="product_id" id="productId" type="hidden" class="form-control" required>
+                    <input name="product_id" id="product_id" type="hidden" class="form-control" required>
 
                     <div class="form-group">
                         <label for="name">Nombre de producto</label>
@@ -19,12 +19,12 @@
 
                     <div class="form-group">
                         <label for="units" class="control-label">Número de unidades</label>
-                        <input name="units" id="units" type="number" class="form-control" placeholder="Ingrese cantidad" required>
+                        <input name="units" type="number" min="1" class="form-control" placeholder="Ingrese cantidad" required>
                     </div>
 
                     <div class="form-group">
                         <label for="price" class="control-label">Precio de compra</label>
-                        <input name="price" id="price" type="number" step="any" class="form-control" placeholder="Ingrese precio" required>
+                        <input name="price" type="number" step="any" min="0" class="form-control" placeholder="Ingrese precio" required>
                     </div>
                 </div>
                 <div class="modal-footer">

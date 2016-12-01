@@ -10,7 +10,7 @@
                         <span class="glyphicon glyphicon-plus"></span> Nueva Categoría
                     </button>
                 </h2>
-
+                <p class="text-info">En este módulo puedes crear categorias para mantener más <strong>organizado</strong> tus productos.</p>
             </div>
         </div>
         <br>
