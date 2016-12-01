@@ -19,9 +19,9 @@
                                 <input name="name" id="name" type="text" class="form-control" placeholder="Ingrese nombre" required>
                             </div>
 
-                            <div class="form-group">
-                                <label for="purchase_price" class="control-label">Precio de compra</label>
-                                <input name="purchase_price" id="purchase_price" type="number" step="any" class="form-control" placeholder="Ingrese precio" required>
+                            <div class="form-group has-success">
+                                <label for="sale_price" class="control-label">Precio de Venta</label>
+                                <input name="sale_price" id="sale_price" type="number" step="any" class="form-control" placeholder="Ingrese precio" required>
                             </div>
 
                             <div class="form-group">

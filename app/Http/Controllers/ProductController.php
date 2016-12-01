@@ -103,7 +103,7 @@ class ProductController extends Controller
         return Datatables::of($products)
             ->addColumn('actions', function($product) {
                 return "
-                <a href='#' class='text-success' data-id='{$product->id}'>
+                <a href='#' class='text-success btn-action' data-id='{$product->id}'>
                     <span class='glyphicon glyphicon-pencil'></span> Editar
                 </a>
                 <a href='#' class='text-danger' data-id='{$product->id}'>

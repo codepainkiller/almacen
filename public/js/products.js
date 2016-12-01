@@ -30,6 +30,7 @@ var table = $('table').DataTable({
         {data: 'id', name: 'products.id'},
         {data: 'name'},
         {data: 'sale_price'},
+        {data: 'purchase_price'},
         {data: 'stock'},
         //{data: 'sales'},
         {data: 'category.name', name: 'category.name'},
@@ -56,7 +57,7 @@ $('tbody').on('click', '.text-success', function () {
 
     $.get('/products/' + id, function (product) {
         $('#name').val(product.name);
-        $('#purchase_price').val(product.purchase_price);
+        //$('#purchase_price').val(product.purchase_price);
         $('#stock').val(product.stock);
         $('#category_id').val(product.category_id);
         $('#sale_price').val(product.sale_price);

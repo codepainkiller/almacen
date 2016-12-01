@@ -5770,4 +5770,7 @@ button.close {
   font-size: 3rem;
   font-weight: 300; }
 
+.btn-action {
+  margin-right: 10px; }
+
 /*# sourceMappingURL=app.css.map */
