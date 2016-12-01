@@ -18,7 +18,7 @@
                                 <input name="name" type="text" class="form-control" placeholder="Ingrese nombre" required>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group has-success">
                                 <label for="sale_price" class="control-label">Precio de venta</label>
                                 <input name="sale_price" type="number" step="any" min="0" class="form-control" placeholder="Ingrese precio" required>
                             </div>

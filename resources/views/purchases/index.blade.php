@@ -26,7 +26,8 @@
                             <th>Fecha</th>
                             <th>Producto</th>
                             <th>Unidades</th>
-                            <th>Precio de Compra</th>
+                            <th>Precio Unitario</th>
+                            <th>Total</th>
                             <th>Registrado por</th>
                             <th>Acciones</th>
                         </tr>
@@ -43,6 +44,7 @@
                                     <td>{{ $purchase->product->name }}</td>
                                     <td>{{ $purchase->units }}</td>
                                     <td>s/ {{ number_format($purchase->price, 2, ',', ' ') }}</td>
+                                    <td>s/ {{ number_format($purchase->units * $purchase->price, 2, ',', ' ') }}</td>
                                     <td>{{ $purchase->registered_by }}</td>
                                     <td>
                                         <a href='#' class='text-danger' data-id='{{ $purchase->id }}'>

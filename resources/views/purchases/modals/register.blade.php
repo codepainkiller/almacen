@@ -22,8 +22,8 @@
                         <input name="units" type="number" min="1" class="form-control" placeholder="Ingrese cantidad" required>
                     </div>
 
-                    <div class="form-group">
-                        <label for="price" class="control-label">Precio de compra</label>
+                    <div class="form-group has-success">
+                        <label for="price" class="control-label">Precio unitario de compra</label>
                         <input name="price" type="number" step="any" min="0" class="form-control" placeholder="Ingrese precio" required>
                     </div>
                 </div>
