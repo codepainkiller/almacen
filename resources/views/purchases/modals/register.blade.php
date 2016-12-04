@@ -10,11 +10,15 @@
                     <h4 class="modal-title" id="myModalLabel">Registrar Compra</h4>
                 </div>
                 <div class="modal-body">
-                    <input name="product_id" id="product_id" type="hidden" class="form-control" required>
 
                     <div class="form-group">
-                        <label for="name">Nombre de producto</label>
-                        <input name="name" id="name" type="text" class="form-control"  placeholder="Escriba y seleccione el producto..." required>
+                        <label for="product_id">Nombre de producto</label>
+                        <select name="product_id" class="selectpicker form-control " data-size="10" data-live-search="true" required>
+                            <option value="" >Seleccione Producto</option>
+                            @foreach(\App\Product::orderBy('name')->get() as $product)
+                                <option value="{{ $product->id }}">{{ $product->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="form-group">

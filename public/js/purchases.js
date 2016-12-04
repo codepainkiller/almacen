@@ -16,8 +16,13 @@ function confirm(id) {
             form.submit();
         });
 }
-
-$("#name").easyAutocomplete({
+/*
+$('#name').select2({
+    theme: "bootstrap"
+});
+*/
+/*
+$("#name2").easyAutocomplete({
     url: "sales/list-products",
     getValue: "name",
     list: {
@@ -45,25 +50,9 @@ $("#name").easyAutocomplete({
     theme: "bootstrap",
     adjustWidth: false
 });
-
-$('[data-toggle="popover"]').popover();
-/*
-$('tbody').on('click', '.text-success', function () {
-    var id = $(this).data('id');
-    var form = $('#editForm');
-    var url = form.attr('action').replace(':id', id);
-    form.attr('action', url);
-
-    $.get('/compras/' + id, function (compra) {
-        $('#name').val(compra.product.name);
-        $('#product_id').val(compra.product_id);
-        $('#units').val(compra.units);
-        $('#price').val(compra.price);
-
-        $('#editModal').modal('show');
-    });
-});
 */
+$('[data-toggle="popover"]').popover();
+
 $('tbody').on('click', '.text-danger', function () {
     console.log('Destroy id', $(this).data('id'));
     confirm($(this).data('id'));

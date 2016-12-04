@@ -34,7 +34,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
     $salePrice =  round($purchasePrice + $gain, 2);
 
     return [
-        'name' => $faker->word,
+        'name' => ucfirst($faker->unique()->word),
         'stock' => rand(1, 20),
         'sales' => rand(1, 20),
         'purchase_price' => $purchasePrice,

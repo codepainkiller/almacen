@@ -16,15 +16,14 @@ require('laravel-elixir-vue-2');
 elixir(mix => {
     mix.sass('app.scss')
         .scripts([
-            'libs/sweetalert-dev.js',
-            'libs/jquery.easy-autocomplete.js'
+            'libs/bootstrap-select.js',
+            'libs/sweetalert-dev.js'
         ],
         './public/js/libs.js')
         .styles([
+            'libs/bootstrap-select.css',
             'libs/sweetalert.css',
-            'libs/dataTables.bootstrap.min.css',
-            'libs/easy-autocomplete.css',
-            'libs/easy-autocomplete.themes.css'
+            'libs/dataTables.bootstrap.min.css'
         ],
         './public/css/libs.css')
        .webpack('app.js')
