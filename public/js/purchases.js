@@ -21,8 +21,7 @@ $('table').dataTable({
     "language": {
         "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
     },
-    "order": [[0, 'desc']],
-    "pageLength": 25
+    "order": [[0, 'desc']]
 });
 
 $('[data-toggle="popover"]').popover();

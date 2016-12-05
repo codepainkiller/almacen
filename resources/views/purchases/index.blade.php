@@ -20,6 +20,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table-responsive ">
+
                     <table class="table table-bordered table-hover">
                         <thead>
                         <tr>
@@ -55,10 +56,6 @@
                             @endforeach
                         </tbody>
                     </table>
-
-                    <div class="text-center">
-                        {{ $purchases->render() }}
-                    </div>
 
                 </div>
             </div>
