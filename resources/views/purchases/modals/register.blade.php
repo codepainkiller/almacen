@@ -15,7 +15,7 @@
                         <label for="product_id">Nombre de producto</label>
                         <select name="product_id" class="selectpicker form-control " data-size="10" data-live-search="true" required>
                             <option value="" >Seleccione Producto</option>
-                            @foreach(\App\Product::orderBy('name')->get() as $product)
+                            @foreach($products as $product)
                                 <option value="{{ $product->id }}">{{ $product->name }}</option>
                             @endforeach
                         </select>
