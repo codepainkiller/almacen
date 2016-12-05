@@ -16,41 +16,15 @@ function confirm(id) {
             form.submit();
         });
 }
-/*
-$('#name').select2({
-    theme: "bootstrap"
-});
-*/
-/*
-$("#name2").easyAutocomplete({
-    url: "sales/list-products",
-    getValue: "name",
-    list: {
-        match: {
-            enabled: true
-        },
-        onSelectItemEvent: function() {
-            var product = $("#name").getSelectedItemData();
-            $("#product_id").val(product.id).trigger("change");
-        },
-        onHideListEvent: function() {
-            if (! $('#name').val()) {
-                $("#product_id").val("").trigger("change");
-            }
-        }
+
+$('table').dataTable({
+    "language": {
+        "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
     },
-    ajaxSettings: {
-        dataType: "json",
-        method: "GET",
-        data: {
-            dataType: "json"
-        }
-    },
-    //requestDelay: 250,
-    theme: "bootstrap",
-    adjustWidth: false
+    "order": [[0, 'desc']],
+    "pageLength": 50
 });
-*/
+
 $('[data-toggle="popover"]').popover();
 
 $('tbody').on('click', '.text-danger', function () {
