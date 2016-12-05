@@ -26,9 +26,15 @@
                         <input name="units" type="number" min="1" class="form-control" placeholder="Ingrese cantidad" required>
                     </div>
 
-                    <div class="form-group has-success">
+                    <div class="form-group">
                         <label for="price" class="control-label">Precio unitario de compra</label>
                         <input name="price" type="number" step="any" min="0" class="form-control" placeholder="Ingrese precio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="purchased_at" class="control-label">Fecha de Compra</label>
+                        <input name="purchased_at" id="purchased_at" type="text" class="form-control"
+                               data-provide="datepicker"
+                               data-date-end-date="0d">
                     </div>
                 </div>
                 <div class="modal-footer">

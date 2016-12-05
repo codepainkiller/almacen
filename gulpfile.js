@@ -17,13 +17,17 @@ elixir(mix => {
     mix.sass('app.scss')
         .scripts([
             'libs/bootstrap-select.js',
-            'libs/sweetalert-dev.js'
+            'libs/sweetalert-dev.js',
+            'libs/moment.js',
+            'libs/bootstrap-datepicker.js',
+            'libs/bootstrap-datepicker.es.js'
         ],
         './public/js/libs.js')
         .styles([
             'libs/bootstrap-select.css',
             'libs/sweetalert.css',
-            'libs/dataTables.bootstrap.min.css'
+            'libs/dataTables.bootstrap.min.css',
+            'libs/bootstrap-datepicker3.css'
         ],
         './public/css/libs.css')
        .webpack('app.js');

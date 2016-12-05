@@ -26,6 +26,17 @@ $('table').dataTable({
 
 $('[data-toggle="popover"]').popover();
 
+var date = $('#purchased_at').datepicker({
+    format: "yyyy-mm-dd",
+    language: "es",
+    autoclose: true,
+    todayHighlight: true,
+    todayBtn: 'linked'
+});
+
+date.datepicker('update', moment().format());
+
+
 $('tbody').on('click', '.text-danger', function () {
     console.log('Destroy id', $(this).data('id'));
     confirm($(this).data('id'));

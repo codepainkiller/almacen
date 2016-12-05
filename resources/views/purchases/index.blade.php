@@ -24,29 +24,31 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>Fecha</th>
+                            <th>Fecha de Compra</th>
+
                             <th>Producto</th>
                             <th>Unidades</th>
                             <th>Precio Unitario</th>
                             <th>Total</th>
-                            <th>Registrado por</th>
+                            <th>Registrado</th>
                             <th>Acciones</th>
                         </tr>
                         </thead>
                         <tbody>
                             @foreach($purchases as $purchase)
-                                <tr data-toggle="popover"
-                                    data-trigger="hover"
-                                    data-placement="left"
-                                    data-content="{{ ucfirst($purchase->updated_at->diffForHumans()) }}">
+                                <tr>
                                     <td>
-                                        {{ $purchase->updated_at->toDateString() }}
+                                        @if(property_exists($purchase, 'purchased_at'))
+                                            {{ $purchase->purchased_at->toDateString() }}
+                                        @else
+                                            {{ $purchase->created_at->toDateString() }}
+                                        @endif
                                     </td>
                                     <td>{{ $purchase->product->name }}</td>
                                     <td>{{ $purchase->units }}</td>
                                     <td>s/ {{ number_format($purchase->price, 2, ',', ' ') }}</td>
                                     <td>s/ {{ number_format($purchase->units * $purchase->price, 2, ',', ' ') }}</td>
-                                    <td>{{ $purchase->registered_by }}</td>
+                                    <td>{{ ucfirst($purchase->created_at->diffForHumans()) }}</td>
                                     <td>
                                         <a href='#' class='text-danger' data-id='{{ $purchase->id }}'>
                                             <span class='glyphicon glyphicon-trash'></span> Eliminar
