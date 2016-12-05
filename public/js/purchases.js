@@ -22,7 +22,7 @@ $('table').dataTable({
         "url": "https://cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
     },
     "order": [[0, 'desc']],
-    "pageLength": 50
+    "pageLength": 25
 });
 
 $('[data-toggle="popover"]').popover();
