@@ -26,8 +26,14 @@ elixir(mix => {
             'libs/dataTables.bootstrap.min.css'
         ],
         './public/css/libs.css')
-       .webpack('app.js')
-       .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');
+       .webpack('app.js');
 
-    mix.browserSync({proxy: 'almacen.dev'});
+    mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/fonts/bootstrap');
+    mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap/','public/build/fonts/bootstrap');
+
+    mix.version(['css/app.css', 'css/libs.css', 'js/app.js', 'js/libs.js']);
+
+    mix.browserSync({
+        proxy: 'almacen.dev'
+    });
 });

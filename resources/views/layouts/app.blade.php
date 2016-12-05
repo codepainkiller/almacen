@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-    <link href="/css/libs.css" rel="stylesheet">
+    <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
+    <link href="{{ elixir('css/libs.css') }}" rel="stylesheet">
 
     @yield('css-content')
 
@@ -92,8 +92,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
-    <script src="/js/libs.js"></script>
+    <script src="{{ elixir('js/app.js') }}"></script>
+    <script src="{{ elixir('js/libs.js') }}"></script>
 
     @yield('js-content')
 
