@@ -13,7 +13,7 @@ class CategoryComposer
 
     public function __construct()
     {
-        $this->categories = Category::orderBy('name')->get();
+        $this->categories = Category::all();
     }
 
     public function compose(View $view)
