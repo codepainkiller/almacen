@@ -43,6 +43,7 @@ class ProductController extends Controller
     {
         $request->offsetSet('stock', 0);
         $request->offsetSet('purchase_price', 0);
+        $request->offsetSet('sale_price', 0);
         $product = Product::create($request->except('_token'));
 
         if ($product) {

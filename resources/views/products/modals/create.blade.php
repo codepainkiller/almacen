@@ -17,12 +17,12 @@
                                 <label for="name" class="control-label">Nombre</label>
                                 <input name="name" type="text" class="form-control" placeholder="Ingrese nombre" required>
                             </div>
-
+                            {{--
                             <div class="form-group has-success">
                                 <label for="sale_price" class="control-label">Precio de venta</label>
                                 <input name="sale_price" type="number" step="any" min="0" class="form-control" placeholder="Ingrese precio" required>
                             </div>
-
+                            --}}
                             <div class="form-group">
                                 <label for="category_id" class="control-label">Categoría</label>
                                 <select name="category_id" class="form-control">

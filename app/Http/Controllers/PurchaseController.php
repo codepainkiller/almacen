@@ -33,10 +33,12 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         $product = Product::find($request->get('product_id'));
+        $purchasePrice = $request->get('price');
 
         if ($product) {
             $product->stock += $request->get('units');
-            $product->purchase_price = $request->get('price');
+            $product->purchase_price = $purchasePrice;
+            $product->sale_price = $purchasePrice + ($purchasePrice * config('settings.percentage_gain'))/100;
             $product->save();
 
             $request->offsetSet('registered_by', auth()->user()->name);
@@ -62,8 +64,10 @@ class PurchaseController extends Controller
 
             if ($lastPurchase) {
                 $product->purchase_price = $lastPurchase->price;
+                $product->sale_price = $lastPurchase->price + ($lastPurchase->price * config('settings.percentage_gain'))/100;
             } else {
                 $product->purchase_price = 0;
+                $product->sale_price = 0;
             }
 
             $product->stock -= $purchase->units;
