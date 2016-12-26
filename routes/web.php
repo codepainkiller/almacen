@@ -23,3 +23,6 @@ Route::resource('categorias', 'CategoryController', ['except' => ['edit', 'creat
 
 Route::resource('compras', 'PurchaseController', ['except' => ['edit', 'create', 'update', 'show']]);
 
+Route::get('ajustes', 'SettingsController@index');
+Route::put('ajustes', 'SettingsController@update');
+

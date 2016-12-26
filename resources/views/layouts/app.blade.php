@@ -70,10 +70,14 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="/ajustes"><span class="glyphicon glyphicon-wrench"></span> Ajustes</a>
+                                    </li>
+                                    <li>
+
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Salir
+                                            <span class="glyphicon glyphicon-off"></span> Salir
                                         </a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
